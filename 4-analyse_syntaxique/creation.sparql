@@ -1,0 +1,21 @@
+PREFIX lo17: <http://www.owl-ontologies.com/lo17#> 
+PREFIX pf: <http://jena.hpl.hp.com/ARQ/property#>
+SELECT ?bulletin ?titre
+WHERE {
+{
+	 ?bulletin lo17:hasTexte ?lit ;
+  ?lit pf:textMatch ('+création' 0.3) .
+  }
+  UNION
+  {
+  ?bulletin lo17:hasTitre ?titre .
+  ?titre pf:textMatch ('+création' 0.3) .
+  }		
+  
+}
+
+# ou
+# ?lit pf:textMatch ('+création' 0.3) .
+# ?bulletin lo17:hasTitre ?titre .
+# ?bulletin lo17:hasTexte ?texte ;
+# FILTER (?lit = ?titre || ?lit = ?texte) 

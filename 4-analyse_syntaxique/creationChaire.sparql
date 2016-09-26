@@ -1,0 +1,9 @@
+PREFIX lo17: <http://www.owl-ontologies.com/lo17#> 
+PREFIX pf: <http://jena.hpl.hp.com/ARQ/property#>
+
+SELECT ?bulletin ?titre
+WHERE {
+  ?titre pf:textMatch '+création +chaire' .
+  ?bulletin lo17:hasTitre ?titre .
+  		
+}

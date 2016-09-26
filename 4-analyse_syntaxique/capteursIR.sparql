@@ -1,0 +1,9 @@
+PREFIX lo17: <http://www.owl-ontologies.com/lo17#> 
+PREFIX pf: <http://jena.hpl.hp.com/ARQ/property#>
+SELECT ?contact
+WHERE {
+  ?lit pf:textMatch ('+capteurs -infrarouge* -Internet' 0.5)  .
+  ?bulletin lo17:hasTexte ?lit ;
+  			lo17:hasContact ?contact .
+  
+}
