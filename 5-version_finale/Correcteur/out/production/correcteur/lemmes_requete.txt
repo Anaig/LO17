@@ -1,0 +1,33 @@
+veux	vouloir
+voudrais	vouloir
+parle	parler
+articles	article
+document	article
+documents	article
+souhaite	vouloir
+contenir	parler
+contienne	parler
+contient	parler
+contiennent	parler
+fait référence à	parler
+font référence à	parler
+trouve	vouloir
+donne	vouloir
+affiche	vouloir
+afficher	vouloir
+combien	nombre
+récupérer	vouloir
+récupère	vouloir
+concernant	parler
+parlant	parler
+contenant	parler
+parlent	parler
+concerne	parler
+concernent	parler
+mots	mot
+mentionner	parler
+mentionne	parler
+mentionnent	parler
+mentionnant	parler
+février	02
+quel	vouloir

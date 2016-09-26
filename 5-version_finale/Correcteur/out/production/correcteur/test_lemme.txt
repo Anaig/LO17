@@ -1,0 +1,7 @@
+liste 	liste
+piste 	piste
+reste 	reste
+peste 	peste
+ils 	ils
+grande 	grande
+grenade 	grenade
