@@ -1,0 +1,9 @@
+		while ($texte=~ /<\/span>.*?(http:\/\/streaming\.yayimages\.com\/images\/edited\/photographer\/.*?\.jpg).*?>.?(<span class="style21"><strong>(.*?)<\/strong><\/span>)?/g) {
+			print "\t\t\t<image>"."\n";
+			$urlimage = "\t\t\t\t<urlImage>".$1."</urlImage>";
+			print $urlimage."\n";
+			$legendeimage = "\t\t\t\t<legendeImage>".$3."</legendeImage>";
+			print $legendeimage."\n";
+		
+			print "\t\t\t</image>"."\n";
+		}

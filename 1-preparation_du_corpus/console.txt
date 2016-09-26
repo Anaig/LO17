@@ -1,0 +1,42 @@
+cat corpus_P16_ss_balise_2.xml | perl segmente_TT.pl -f > mots.txt
+sort mots.txt > sortmots.txt     
+uniq -c sortmots.txt > sortuniquemots.txt
+
+
+cat corpus_P16_ss_balise_5.xml | perl segmente_TT.pl -f | sort | uniq -c > tf.txt
+
+
+cat corpus_P16_ss_balise_5.xml | perl segmente_TT.pl -f | sort -u | cut -f 1 | sort | uniq -c > df.txt
+
+perl script_idf.pl df.txt > idf.txt
+
+perl script_tf_idf.pl idf.txt tf.txt > tfidf.txt
+
+sort -k 3 tfidf.txt | more > tfidf_seuil.txt
+
+perl script_moyenne.pl tfidf.txt > stoplist3.txt
+
+sort -u stoplist.txt > stoplistsort.txt
+
+sort  -u stoplist3.txt > moyennetfidf.txt
+
+perl script_stop_list.pl tfidlmoyennetri.txt | uniq > stoplistfinale2.txt
+
+perl script_moyenne.pl tfidf.txt > tfidfmoyenne.txt 
+  
+sort -u tfidfmoyenne.txt > tfidlmoyennetri.txt  
+ 
+perl script_stop_list.pl tfidlmoyennetri.txt | uniq > stoplistfinale2.txt
+
+ perl newcreeFiltre.pl stoplistfinale2.txt > stoplist2.pl
+
+perl stoplist2.pl corpus_P16_ss_balise_5.xml > corpus_filtre2.xml
+
+cat corpus_filtre2.xml | perl segmente_TT.pl -f | sort -u | perl successeurs_P16.pl > successeurs3.txt
+
+perl filtronc_P16.pl -v successeurs3.txt mots_lemme4.txt
+
+perl newcreeFiltre.pl mots_lemme4.txt > filtre_lemme.pl
+
+ perl filtre_lemme.pl corpus_filtre2.xml > corpus_filtre_lemme.xml
+
